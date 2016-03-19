@@ -23,6 +23,21 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initView();
+        getData();
+
+    }
+
+    private void getData() {
+        SharedPreferences preferences = getSharedPreferences(PRIFERENCE, MODE_PRIVATE);
+        nameEditText.setText(preferences.getString("name",""));
+        hobbyEditText.setText(preferences.getString("hobby", ""));
+        unitCheckBox.setChecked(preferences.getBoolean("isworking", false));
+        unitProperty.check(preferences.getInt("unitid", -1));
+        onCheckedChanged(unitCheckBox,unitCheckBox.isChecked());
+    }
+
+    private void initView() {
         nameEditText = (EditText) findViewById(R.id.name);
         hobbyEditText = (EditText) findViewById(R.id.hobby);
         unitCheckBox = (CheckBox) findViewById(R.id.isworking);
@@ -31,13 +46,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         radioButton2 = (RadioButton) findViewById(R.id.rb_unit2);
         radioButton3 = (RadioButton) findViewById(R.id.rb_unit3);
         unitCheckBox.setOnCheckedChangeListener(this);
-        SharedPreferences preferences = getSharedPreferences(PRIFERENCE, MODE_PRIVATE);
-        nameEditText.setText(preferences.getString("name",""));
-        hobbyEditText.setText(preferences.getString("hobby", ""));
-        unitCheckBox.setChecked(preferences.getBoolean("isworking", false));
-        unitProperty.check(preferences.getInt("unitid", -1));
-        onCheckedChanged(unitCheckBox,unitCheckBox.isChecked());
-
     }
 
     @Override
