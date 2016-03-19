@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:text="姓名"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        />
+    <EditText
+        android:id="@+id/hobby"
+        android:layout_width="250dp"
+        android:layout_height="60dp" />
+    <TextView
+        android:text="兴趣爱好"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        />
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="250dp"
+        android:layout_height="60dp" />
+    <CheckBox
+        android:id="@+id/isworking"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="是否工作"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="单位性质:"
+        />
+    <RadioGroup
+        android:id="@+id/unit_property"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rb_unit1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="国营"
+            />
+        <RadioButton
+            android:id="@+id/rb_unit2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="私营"/>
+        <RadioButton
+            android:id="@+id/rb_unit3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="股份制"
+            />
+    </RadioGroup>
+</LinearLayout>
